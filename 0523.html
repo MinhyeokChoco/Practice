@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .pagination {
+            display: flex;
+            list-style: none;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="content"></div>
+    <ul id="pagination" class="pagination"></ul>
+</body>
+<script>
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const data = Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`); // 예제 데이터 생성
+    //     console.table(data);
+    //     const itemsPerPage = 10;
+    //     let currentPage = 1;
+
+    //     function displayItems(page) {
+    //         const start = (page - 1) * itemsPerPage;
+    //         const end = start + itemsPerPage;
+    //         const itemsToShow = data.slice(start, end);
+
+    //         const contentDiv = document.getElementById('content');
+    //         contentDiv.innerHTML = itemsToShow.map(item => `<p>${item}</p>`).join('');
+    //     }
+
+    //     function setupPagination() {
+    //         const totalPages = Math.ceil(data.length / itemsPerPage);
+    //         const paginationUl = document.getElementById('pagination');
+    //         paginationUl.innerHTML = '';
+
+    //         for (let i = 1; i <= totalPages; i++) {
+    //             const li = document.createElement('li');
+    //             li.innerText = i;
+    //             li.addEventListener('click', () => {
+    //                 currentPage = i;
+    //                 displayItems(currentPage);
+    //                 updateActivePage();
+    //             });
+    //             paginationUl.appendChild(li);
+    //         }
+    //     }
+
+    //     function updateActivePage() {
+    //         const paginationUl = document.getElementById('pagination');
+    //         Array.from(paginationUl.children).forEach((li, index) => {
+    //             if (index + 1 === currentPage) {
+    //                 li.style.fontWeight = 'bold';
+    //             } else {
+    //                 li.style.fontWeight = 'normal';
+    //             }
+    //         });
+    //     }
+
+    //     displayItems(currentPage);
+    //     setupPagination();
+    //     updateActivePage();
+    // });
+
+    function render() { // render 함수 선언
+        const list = document.getElementById("List"); // list 변수에 List 요소 할당
+        // 변수명을 임시로 사용 할 때 변수명 앞에 언더바를 붙임
+        if (list !== null) { // list 안에 값이 있으면
+            for (let i = 0; i < writeList.length; i++) { // writeList 배열 길이 만큼 반복문 실행
+                const _list = document.createElement("div"); // span 태그를 담을 div 요소 생성, 그리고 _list에 할당
+
+                _list.innerHTML = `
+            <span>${i + 1}</span>
+            <span>${writeList[i].title}</span>
+            <span>${writeList[i].content}</span>
+            <span>${writeList[i].name}</span>
+            <span>${writeList[i].date}</span>
+            <span>${writeList[i].views}</span>
+            <span data-index="${i}">⭐️</span>
+            `
+                // 작성한 글의 번호, 제목, 내용, 작성자, 작성일, 조회수, 보기 버튼을 _list에 입력
+
+
+
+                _list.lastElementChild.onclick = (e) => { // _list의 마지막 자식요소를 클릭 했을 때 발생되는 이벤트 작성
+                    sessionStorage.setItem("viewIndex", e.target.dataset.index) // 세션스토리지에 viewIndex 라는 키 안에 이벤트가 발생되는 데이터셋의 값을 저장한다.
+                    writeList[i].views++; // writeList 배열의 i번째 요소의 views 속성을 1씩 증가 시킵니다. (조회수)
+                    localStorage.setItem("csData", JSON.stringify(writeList)); // writeList 배열을 JSON 문자형으로 변환해서 로컬스토리지에 csData라는 키 안에 값으로 저장 합니다.
+                    location.href = `view.html?index=${viewIndex}` // 상세 페이지로 이동
+                }
+
+                list.append(_list) // span을 담은 div를 list에 담는다.
+
+            }
+        }
+    }
+</script>
+
+</html>

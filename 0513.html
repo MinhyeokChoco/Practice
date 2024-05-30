@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let memo = {};
+    function fibo2(n) {
+        let result; // 연산을 하고 반환할 값
+
+        // 한번 상태를 만든 연산인지.
+        if (n in memo) {
+            // 연산을 했었어
+            result = memo[n];
+            // 객체를 하고 넘어오면 더 이해가 될거니까.
+        } else {
+            // 연산을 안했었어
+            if (n == 1 || n == 2) {
+                result = 1;
+            } else {
+                result = fibo2(n - 1) + fibo(n - 2);
+            }
+
+            // 다음번에 연산을 하지 않게 하기 위해서 상태 값을 저장
+            memo[n] = result;
+        }
+
+        return result;
+    }
+</script>
+
+</html>

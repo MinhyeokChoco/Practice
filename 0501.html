@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let a = []; // 넣을 빈 배열 생성
+    let b = 0; // 최댓값 넣을 변수 생성
+    for (let i = 0; i < 6; i++) {
+        a[i] = parseInt(Math.random() * 100)
+    }
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] > b) {
+            b = a[i];
+        }
+    }
+    console.log(a);
+    console.log(b);
+</script>
+
+</html>

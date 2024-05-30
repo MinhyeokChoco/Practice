@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const data = Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`);
+    const itemsPerPage = 10;
+    let currentPage = 1;
+
+    const start = (1 - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const itemsToShow = data.slice(start, end);
+
+    itemsToShow[0] = 2;
+    console.log(data);
+</script>
+
+</html>

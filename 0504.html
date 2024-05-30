@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // console.log(parseInt(true))
+
+    // function num(a, b) {
+    //     if ((a + b) > 5) {
+    //         return 5
+    //     }
+    // }
+    // console.log(num(prompt("첫번째 수"), prompt("두번째 수")));
+
+    //     let num2 = 20;
+
+    //     function fn01(num2) {
+    //         console.log(num2);
+    //     }
+
+    //     fn01();
+
+    function callback(fn) {
+        console.log(1);
+        fn(callback3);
+    }
+
+    function callback2(fn) {
+        console.log(2);
+        fn();
+    }
+
+    function callback3(fn) {
+        fn();
+        console.log("이게 뭐임?");
+    }
+
+    callback(callback2);
+</script>
+
+</html>

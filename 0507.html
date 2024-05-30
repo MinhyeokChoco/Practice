@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 프로그래머스 개미 군단
+    function solution(hp) {
+        const general = 5;
+        const soldier = 3;
+        const ergate = 1;
+        let generalResult;
+        let generalRemain;
+        let soldierResult;
+        let soldierRemain;
+        let ergateResult;
+        let answer = 0;
+        if (hp >= general) {
+            generalResult = Math.floor(hp / general);
+            generalRemain = hp % general;
+            soldierResult = Math.floor(generalRemain / soldier);
+            soldierRemain = generalRemain % soldier;
+            ergateResult = soldierRemain / ergate;
+        } else if (hp < general) {
+            soldierResult = Math.floor(generalRemain / soldier);
+            soldierRemain = generalRemain % soldier;
+        } else if (hp < soldier) {
+            ergateResult = soldierRemain / ergate
+        }
+        answer = generalResult + soldierResult + ergateResult;
+        return answer;
+    }
+
+    function solution(hp) {
+        const general = 5;
+        const soldier = 3;
+        const ergate = 1;
+        let generalResult = 0;
+        let generalRemain = 0;
+        let soldierResult = 0;
+        let soldierRemain = 0;
+        let ergateResult = 0;
+        let answer = 0;
+
+        generalResult = Math.floor(hp / general);
+        generalRemain = hp % general;
+        soldierResult = Math.floor(generalRemain / soldier);
+        soldierRemain = generalRemain % soldier;
+        ergateResult = soldierRemain / ergate;
+
+        answer = generalResult + soldierResult + ergateResult;
+        return answer;
+    }
+
+</script>
+
+</html>
