@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // const myObj = {
+    //     myMethod: () => {
+    //         console.log("메서드");
+    //     }
+    // }
+    // myObj.myMethod();
+
+    // ------------------------------------------------------
+
+    // const circle = {
+    //     radius: 5,
+    //     getDiameter: function () {
+    //         return 2 * this.radius;
+    //     }
+    // }
+
+    // console.log(circle.getDiameter());
+
+    // -----------------------------------------------
+
+    // let obj = {
+    //     name: "choco",
+    //     age: 28,
+    //     city: "seoul"
+    // }
+
+    // obj.name = "good";
+    // obj.major = "computer science"
+    // let { major } = obj;
+    // const [arr, a, b] = [1, 2, 3]
+    // console.log(major);
+    // console.log(arr);
+    // console.log(b);
+
+    // -------------------------------------
+
+    // let object = {
+    //     name: "beginner",
+    //     age: 28
+    // }
+
+    // object['name'] = 'Intermediate';
+    // console.log(object['name']);
+
+    // object['occupation'] = 'Developer';
+    // console.log(object['occupation']);
+
+    // console.log(object);
+
+    // object[email] = 'choco@developer.com';
+    // console.log(object[email]);
+
+    // -------------------------------------
+
+    // const myinfo = {
+    //     name: 'Choco Lee',
+    //     age: 28,
+    //     country: 'South Korea',
+    //     city: ['seoul', 'Gangdong-gu'],
+    //     myKey: 'object good'
+    // };
+
+    // const myKey = 'city';
+
+    // console.log(myinfo['city']); // ['seoul', 'Gangdong-gu']
+    // console.log(myinfo[myKey]); // ['seoul', 'Gangdong-gu']
+    // // 대괄호 표기법으로 변수 myKey 활용 가능 합니다.
+
+    // console.log(myinfo.myKey); // undefined
+    // // 점 표기법으로 변수 myKey 활용 불가능 합니다.
+
+    // ------------------------------------------------------
+
+    const myinfo = {
+        name: 'Choco Lee',
+        age: 28,
+        country: 'South Korea',
+        city: ['seoul', 'Gangdong-gu'],
+        myKey: 'object good'
+    };
+
+    delete myinfo.age;
+    console.log(myinfo);
+</script>
+
+</html>
