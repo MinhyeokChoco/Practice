@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <button>Click Me!</button>
+</body>
+<script>
+
+    // 잘못된 비동기 예제
+
+    // function buy_normal(item, price, quantity) {
+    //     console.log(item + " 상품을 " + quantity + "개 골라서 점원에게 주었습니다.");
+    //     setTimeout(() => {
+    //         console.log("게산이 필요합니다.");
+    //         const total = price * quantity;
+    //         return total
+    //     }, 1000);
+    // }
+
+    // function pay(tot) {
+    //     console.log(tot + "원을 지불하였습니다.");
+    // }
+
+    // const tot = buy_normal("고구마", 1000, 5);
+    // pay(tot);
+
+    // --------------------------------------------------------------------
+
+    // 비동기 예제를 콜백 함수를 이용하여 정상적으로 만들기
+
+    // function buy_toto(item, price, quantity, callback) {
+    //     console.log(item + " 상품을 " + quantity + "개 골라서 점원에게 주었습니다.");
+    //     setTimeout(() => {
+    //         console.log("계산이 필요합니다.");
+    //         const total = price * quantity;
+    //         callback(total);
+    //     }, 1000);
+    // }
+
+    // function pay(tot) {
+    //     console.log(tot + "원을 지불하였습니다.");
+    // }
+
+    // buy_toto("고구마", 1000, 5, pay);
+
+    // ------------------------------------------------------------------------
+
+    // function multiply(a, b) {
+    //     return a * b;
+    // }
+
+    // function square(n) {
+    //     return multiply(n, n);
+    // }
+
+    // function printSquare(n) {
+    //     const squared = square(n);
+    //     console.log(squared);
+    // }
+
+    // printSquare(4);
+
+    // ----------------------------------------------------
+
+    console.log('started');
+
+    $('button').on('click', function onClick() {
+        console.log('clicked');
+
+        setTimeout(function onTimeout() {
+            console.log('Timeout Finished');
+        }, 5000);
+    });
+
+    console.log('Done');
+
+    // // Asynchronous
+    // [1, 2, 3, 4].forEach((i) => {
+    //     console.log(i);
+    // });
+
+    // // Asynchronous
+    // function asyncForEach(array, cb) {
+    //     array.forEach(() => {
+    //         setTimeout(cb, 0);
+    //     })
+    // }
+
+    // asyncForEach([1, 2, 3, 4], function (i) {
+    //     console.log(i)
+    // })
+
+
+</script>
+
+</html>
