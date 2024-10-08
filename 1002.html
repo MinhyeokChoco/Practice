@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const regs =
+    {
+        email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i,
+        password: /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+    }
+    const obj = {
+        email: 'test@gmail.com',
+        password: 'test@1234'
+    };
+    Object.keys(obj).forEach(e => {
+        console.log(regs[e].test(obj[e]))
+        // if (regs[e].test(obj[e])) {
+        //     console.log(e)
+        // }
+    })
+
+
+    // const result = {
+    //     email: sm
+    // }
+</script>
+
+</html>
