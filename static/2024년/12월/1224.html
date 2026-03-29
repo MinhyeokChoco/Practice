@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="project-summary">
+        <h2>프로젝트 이름</h2>
+        <p>간략한 설명입니다. 더 알아보려면 버튼을 클릭하세요.</p>
+        <button id="openModalBtn">자세히 보기</button>
+    </div>
+
+    <!-- 모달 창 -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>프로젝트 상세 내용</h2>
+            <p>여기에 프로젝트의 상세한 설명을 적어보세요.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

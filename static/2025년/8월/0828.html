@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    hello world!
+</body>
+<script>
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    function countWeekendDays(year) {
+        const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        if (isLeapYear(year)) {
+            daysInMonth[1] = 29; // 2월을 29일까지 설정
+        }
+
+        // 2023년 1월 1일이 일요일(7)이므로,
+        // 윤년이 아닌 2024년 등 다른 해 시작 요일은 다를 수 있지만,
+        // 예제는 2023년 1월 1일이 일요일 기준이다. 시작 요일은 입력에 맞게 수정 필요
+        let firstDayOfYear = 7; // 필요시 실제 시작 요일을 입력
+
+        let totalWeekendDays = 0;
+        let currentDay = firstDayOfYear;
+
+        for (let monthDays of daysInMonth) {
+            for (let day = 1; day <= monthDays; day++) {
+                if (currentDay === 6 || currentDay === 7) {
+                    totalWeekendDays++;
+                }
+                currentDay = currentDay < 7 ? currentDay + 1 : 1;
+            }
+        }
+        return totalWeekendDays;
+    }
+
+    console.log(isLeapYear(2024));
+    console.log(countWeekendDays(2023)); // 2023년
+    console.log(countWeekendDays(2024)); // 2024년 (윤년)
+
+</script>
+
+</html>

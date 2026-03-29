@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let name = 'Practice Product'
+
+    class Product {
+        name = ''
+        price = 0
+        constructor(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+        getPrice() {
+            return this.price + "만원";
+        }
+        setPrice(price) {
+            if (price < 0) {
+                throw new Error("마이너스 값은 안돼요.");
+            }
+            return this.price = price + " 만원";
+        }
+    }
+
+    class TV extends Product {
+        inch = ''
+        constructor(name, price, inch) {
+            super(name, price)
+            this.inch = inch;
+        }
+        getInch() {
+            return this.inch + "인치"
+        }
+    }
+
+    const tv1 = new TV('MD TV', 300, '75');
+    console.log(tv1.getInch());
+</script>
+
+</html>
